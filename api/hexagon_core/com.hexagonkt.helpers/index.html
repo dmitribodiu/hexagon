@@ -1,0 +1,514 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="application-name" content="hexagon" />
+  <meta name="author" content="Juanjo Aguililla" />
+  <meta name="description" content="The atoms of your platform" />
+  <meta name="keywords" content="Hexagon, microservices, Kotlin, RabbitMQ, MongoDB, JVM, Web" />
+  <meta name="generator" content="JBake" />
+
+  <meta name="theme-color" content="#135AA1" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="#135AA1" />
+  <meta name="msapplication-navbutton-color" content="#135AA1" />
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <meta name="msapplication-TileColor" content="#135AA1">
+  <meta name="msapplication-TileImage" content="/apple-touch-icon.png">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+
+  <title>Hexagon</title>
+
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css" />
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="shortcut icon" sizes="32x32" href="/favicon.ico" />
+  <link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@hexagon_kt">
+  <meta name="twitter:creator" content="@hexagon_kt">
+  <meta name="twitter:title" content="hexagon">
+  <meta name="twitter:description" content="Hexagon is a microservices library written in Kotlin. Its purpose is to ease the building
+        of services (Web applications, APIs or queue consumers) that run inside a cloud platform">
+  <meta name="twitter:image" content="http://hexagonkt.com/apple-touch-icon.png">
+
+  <meta property="og:title" content="hexagon" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://hexagonkt.com" />
+  <meta property="og:image" content="http://hexagonkt.com/apple-touch-icon.png" />
+  <meta property="og:description" content="Hexagon is a microservices library written in Kotlin. Its purpose is to ease the building
+        of services (Web applications, APIs or queue consumers) that run inside a cloud platform" />
+
+  <meta itemprop="name" content="hexagon">
+  <meta itemprop="description" content="Hexagon is a microservices library written in Kotlin. Its purpose is to ease the building
+        of services (Web applications, APIs or queue consumers) that run inside a cloud platform">
+  <meta itemprop="image" content="http://hexagonkt.com/apple-touch-icon.png">
+
+  <link rel="author" href="/humans.txt" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+  <link rel="canonical" href="http://hexagonkt.com" />
+
+  <!--[if lt IE 9]>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle"
+          data-toggle="collapse"
+          data-target=".navbar-collapse">
+
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+          <img src="/img/logo_white.svg"> <!-- TODO Add 'Hexagon' for documentation pages only -->
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/quick_start.html">Quick Start</a></li>
+          <li><a href="/guides.html">Guides</a></li>
+          <li><a href="/api.html">API</a></li>
+
+          <li>
+            <a href="https://github.com/hexagonkt/hexagon">
+              <i class="fa fa-github fa-2x" aria-hidden="true" style="font-size: 26px;"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/hexagon_kt">
+              <i class="fa fa-twitter fa-2x" aria-hidden="true" style="font-size: 26px;"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://kotlinlang.slack.com/messages/hexagon">
+              <i class="fa fa-slack fa-2x" aria-hidden="true" style="font-size: 26px;"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <aside class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+          <li class="title">Documentation</li>
+          <li><a href="/quick_start.html">Quick Start</a></li>
+          <li><a href="/motivation.html">Motivation</a></li>
+          <li><a href="/alternatives.html">Alternatives</a></li>
+          <li><a href="/ports_and_adapters.html">Ports and Adapters</a></li>
+          <li><a href="/services.html">Create Services</a></li>
+          <li><a href="/building.html">Gradle Helpers</a></li>
+          <li><a href="/api.html">API Reference</a></li>
+          <li>
+            <a href="https://github.com/hexagonkt/hexagon/blob/master/contributing.md">
+              Contribute
+            </a>
+          </li>
+        </ul>
+
+        <ul class="nav nav-sidebar">
+          <li class="title">Core</li>
+          <li><a href="/core/serialization.html">Serialization</a></li>
+          <li><a href="/core/configuration.html">Configuration</a></li>
+        </ul>
+
+        <ul class="nav nav-sidebar">
+          <li class="title">Modules</li>
+          <li><a href="/modules/scheduling.html">Scheduling</a></li>
+          <li><a href="/modules/testing.html">Testing</a></li>
+          <li><a href="/modules/rest.html">REST Helpers</a></li>
+        </ul>
+
+        <ul class="nav nav-sidebar">
+          <li class="title">Ports</li>
+          <li><a href="/ports/server.html">HTTP</a></li>
+          <li><a href="/ports/client.html">Client</a></li>
+          <li><a href="/ports/storage.html">Storage</a></li>
+          <li><a href="/ports/events.html">Events</a></li>
+          <li><a href="/ports/templates.html">Templates</a></li>
+        </ul>
+      </aside>
+
+      <main class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <p><a href="../index.html">hexagon_core</a> / <a href="./index.html">com.hexagonkt.helpers</a></p>
+<h2>Package com.hexagonkt.helpers</h2>
+<p>TODO</p>
+<h3><a href="#types" name="types">Types</a></h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name </th>
+      <th>Summary </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="-ansi-color/index.html">AnsiColor</a> </td>
+      <td><code>enum class AnsiColor</code> </td>
+    </tr>
+    <tr>
+      <td><a href="-ansi-effect/index.html">AnsiEffect</a> </td>
+      <td><code>enum class AnsiEffect</code> </td>
+    </tr>
+    <tr>
+      <td><a href="-coded-exception-test/index.html">CodedExceptionTest</a> </td>
+      <td><code>class CodedExceptionTest</code> </td>
+    </tr>
+    <tr>
+      <td><a href="-helpers-test/index.html">HelpersTest</a> </td>
+      <td><code>class HelpersTest</code> </td>
+    </tr>
+    <tr>
+      <td><a href="-log/index.html">Log</a> </td>
+      <td><code>object Log :</code><a href="-loggable/index.md"><code>Loggable</code></a><br>Default logger when you are lazy to declare one. </td>
+    </tr>
+    <tr>
+      <td><a href="-loggable/index.html">Loggable</a> </td>
+      <td><code>interface Loggable</code><br>Ease the logger definition and usage. Note the logger is fetched in each call. </td>
+    </tr>
+    <tr>
+      <td><a href="-loggable-test/index.html">LoggableTest</a> </td>
+      <td><code>class LoggableTest</code><br>As the logger is only a facade and it is hard to check outputs, the only check is that no exceptions are thrown. </td>
+    </tr>
+    <tr>
+      <td><a href="-strings-test/index.html">StringsTest</a> </td>
+      <td><code>class StringsTest</code> </td>
+    </tr>
+  </tbody>
+</table>
+<h3><a href="#exceptions" name="exceptions">Exceptions</a></h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name </th>
+      <th>Summary </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="-coded-exception/index.html">CodedException</a> </td>
+      <td><code>class CodedException :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-runtime-exception/index.html"><code>RuntimeException</code></a><br>Exception with a code and a list of causes. </td>
+    </tr>
+  </tbody>
+</table>
+<h3><a href="#extensions-for-external-classes" name="extensions-for-external-classes">Extensions for External Classes</a></h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name </th>
+      <th>Summary </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="java.time.-local-date/index.html">java.time.LocalDate</a> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="java.time.-local-date-time/index.html">java.time.LocalDateTime</a> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="java.time.-local-time/index.html">java.time.LocalTime</a> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="java.time.-zoned-date-time/index.html">java.time.ZonedDateTime</a> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="java.util.-date/index.html">java.util.Date</a> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="kotlin.-int/index.html">kotlin.Int</a> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="kotlin.-long/index.html">kotlin.Long</a> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="kotlin.-string/index.html">kotlin.String</a> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="kotlin.-throwable/index.html">kotlin.Throwable</a> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="kotlin.collections.-list/index.html">kotlin.collections.List</a> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="kotlin.collections.-map/index.html">kotlin.collections.Map</a> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="kotlin.text.-regex/index.html">kotlin.text.Regex</a> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+<h3><a href="#properties" name="properties">Properties</a></h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name </th>
+      <th>Summary </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="-b-a-c-k-g-r-o-u-n-d.html">BACKGROUND</a> </td>
+      <td><code>const val BACKGROUND:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><br>ANSI background color base. </td>
+    </tr>
+    <tr>
+      <td><a href="-f-o-r-e-g-r-o-u-n-d.html">FOREGROUND</a> </td>
+      <td><code>const val FOREGROUND:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><br>ANSI foreground color base. </td>
+    </tr>
+    <tr>
+      <td><a href="-s-w-i-t-c-h_-e-f-f-e-c-t.html">SWITCH_EFFECT</a> </td>
+      <td><code>const val SWITCH_EFFECT:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><br>ANSI modifier to switch and effect (add to enable substract todisable). </td>
+    </tr>
+    <tr>
+      <td><a href="cpu-count.html">cpuCount</a> </td>
+      <td><code>val cpuCount:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a> </td>
+    </tr>
+    <tr>
+      <td><a href="eol.html">eol</a> </td>
+      <td><code>val eol:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><br>Runtime specific end of line. </td>
+    </tr>
+    <tr>
+      <td><a href="error.html">error</a> </td>
+      <td><code>val error:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-nothing/index.html"><code>Nothing</code></a><br>Syntax sugar to throw errors. </td>
+    </tr>
+    <tr>
+      <td><a href="hostname.html">hostname</a> </td>
+      <td><code>val hostname:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><br>The hostname of the machine running this program. </td>
+    </tr>
+    <tr>
+      <td><a href="ip.html">ip</a> </td>
+      <td><code>val ip:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><br>The IP address of the machine running this program. </td>
+    </tr>
+    <tr>
+      <td><a href="jvm-id.html">jvmId</a> </td>
+      <td><code>val jvmId:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a> </td>
+    </tr>
+    <tr>
+      <td><a href="jvm-name.html">jvmName</a> </td>
+      <td><code>val jvmName:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a> </td>
+    </tr>
+    <tr>
+      <td><a href="jvm-version.html">jvmVersion</a> </td>
+      <td><code>val jvmVersion:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a> </td>
+    </tr>
+    <tr>
+      <td><a href="locale.html">locale</a> </td>
+      <td><code>val locale:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a> </td>
+    </tr>
+    <tr>
+      <td><a href="mime-types.html">mimeTypes</a> </td>
+      <td><code>val mimeTypes:</code><a href="http://docs.oracle.com/javase/6/docs/api/javax/activation/MimetypesFileTypeMap.html"><code>MimetypesFileTypeMap</code></a> </td>
+    </tr>
+    <tr>
+      <td><a href="system-class-loader.html">systemClassLoader</a> </td>
+      <td><code>val systemClassLoader:</code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/ClassLoader.html"><code>ClassLoader</code></a><br>System class loader. </td>
+    </tr>
+    <tr>
+      <td><a href="time-zone.html">timeZone</a> </td>
+      <td><code>val timeZone:</code><a href="http://docs.oracle.com/javase/6/docs/api/java/util/TimeZone.html"><code>TimeZone</code></a><br>Default timezone. </td>
+    </tr>
+    <tr>
+      <td><a href="timezone.html">timezone</a> </td>
+      <td><code>val timezone:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a> </td>
+    </tr>
+  </tbody>
+</table>
+<h3><a href="#functions" name="functions">Functions</a></h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name </th>
+      <th>Summary </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="ansi.html">ansi</a> </td>
+      <td><code>fun ansi(fg:</code><a href="-ansi-color/index.md"><code>AnsiColor</code></a><code>, bg:</code><a href="-ansi-color/index.md"><code>AnsiColor</code></a><code>, vararg fxs:</code><a href="-ansi-effect/index.md"><code>AnsiEffect</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><br>Creates an ANSI sequence composed by a list of commands (colors, effects, etc.).<code>fun ansi(fg:</code><a href="-ansi-color/index.md"><code>AnsiColor</code></a><code>, vararg fxs:</code><a href="-ansi-effect/index.md"><code>AnsiEffect</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><br><code>fun ansi(vararg fxs:</code><a href="-ansi-effect/index.md"><code>AnsiEffect</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a> </td>
+    </tr>
+    <tr>
+      <td><a href="format-nanos.html">formatNanos</a> </td>
+      <td><code>fun formatNanos(timestamp:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><br>Returns a time difference in nanoseconds formatted as a string. </td>
+    </tr>
+    <tr>
+      <td><a href="logger-of.html">loggerOf</a> </td>
+      <td><code>fun &lt;T :</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><code>Any</code></a><code>&gt; loggerOf(): Logger</code> </td>
+    </tr>
+    <tr>
+      <td><a href="not-empty.html">notEmpty</a> </td>
+      <td><code>fun &lt;V&gt; notEmpty(it:</code><a href="not-empty.md#V"><code>V</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><code>Boolean</code></a> </td>
+    </tr>
+    <tr>
+      <td><a href="parse-query-parameters.html">parseQueryParameters</a> </td>
+      <td><code>fun parseQueryParameters(query:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><code>Map</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>,</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>&gt;</code><br>TODO . </td>
+    </tr>
+    <tr>
+      <td><a href="read-resource.html">readResource</a> </td>
+      <td><code>fun readResource(resource:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>?</code> </td>
+    </tr>
+    <tr>
+      <td><a href="require-resource.html">requireResource</a> </td>
+      <td><code>fun requireResource(resource:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>):</code><a href="http://docs.oracle.com/javase/6/docs/api/java/net/URL.html"><code>URL</code></a> </td>
+    </tr>
+    <tr>
+      <td><a href="resource.html">resource</a> </td>
+      <td><code>fun resource(resource:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>):</code><a href="http://docs.oracle.com/javase/6/docs/api/java/net/URL.html"><code>URL</code></a><code>?</code> </td>
+    </tr>
+    <tr>
+      <td><a href="resource-as-stream.html">resourceAsStream</a> </td>
+      <td><code>fun resourceAsStream(resource:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>):</code><a href="http://docs.oracle.com/javase/6/docs/api/java/io/InputStream.html"><code>InputStream</code></a><code>?</code><br>TODO Fix class loader issues, use thread class loader or whatever http://www.javaworld.com/article/2077344/core-java/find-a-way-out-of-the-classloader-maze.html </td>
+    </tr>
+    <tr>
+      <td><a href="retry.html">retry</a> </td>
+      <td><code>fun &lt;T&gt; retry(times:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>, delay:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><code>Long</code></a><code>, func: () -&gt;</code><a href="retry.md#T"><code>T</code></a><code>):</code><a href="retry.md#T"><code>T</code></a><br>Executes a lambda until no exception is thrown or a number of times is reached. </td>
+    </tr>
+    <tr>
+      <td><a href="system-setting.html">systemSetting</a> </td>
+      <td><code>fun systemSetting(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>?</code></td>
+    </tr>
+  </tbody>
+</table>
+<p><code>kotlin
+assert(parseQueryParameters(&quot;a=1&amp;b&amp;c&amp;d=e&quot;) == mapOf(
+    &quot;a&quot; to &quot;1&quot;,
+    &quot;b&quot; to &quot;&quot;,
+    &quot;c&quot; to &quot;&quot;,
+    &quot;d&quot; to &quot;e&quot;
+))&lt;br&gt;</code> <br><code>fun systemSetting(name:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>, defaultValue:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a> | | <a href="utf8.md">utf8</a> | <code>fun utf8(vararg bytes:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><code>Int</code></a><code>):</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a> |</p>
+      </main>
+    </div>
+
+    <div class="row">
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-offset-1 col-xs-3 col-md-offset-0 col-md-2 quicklink-section">
+          <div class="footer-title">Documentation</div>
+          <ul class="quicklinks">
+                        <li><a href="/quick_start.html">Quick Start</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/api.html">API</a></li>
+          </ul>
+        </div>
+
+        <div class="col-xs-3 col-md-2 quicklink-section">
+          <div class="footer-title">Contribute</div>
+          <ul class="quicklinks">
+            <li>
+              <a href="https://github.com/hexagonkt/hexagon/blob/master/contributing.md">
+                Contributing
+              </a>
+            </li>
+            <li><a href="https://github.com/hexagonkt/hexagon/projects/1">Planning</a></li>
+            <li><a href="https://github.com/hexagonkt/hexagon/milestones">Roadmap</a></li>
+          </ul>
+        </div>
+
+        <div class="col-xs-3 col-md-2 quicklink-section">
+          <div class="footer-title">Community</div>
+          <ul class="quicklinks">
+            <li><a href="https://github.com/hexagonkt/hexagon">Github</a></li>
+            <li><a href="https://twitter.com/hexagon_kt">Twitter</a></li>
+            <li><a href="https://kotlinlang.slack.com/messages/hexagon">Slack</a></li>
+          </ul>
+        </div>
+
+        <div class="col-xs-offset-1 col-xs-10 col-md-offset-0 col-md-6 quicklink-section">
+          <div class="credits">
+            Made with <i class="fa fa-heart heart"></i> by
+            <a href="https://github.com/hexagonkt/hexagon/graphs/contributors">
+            OSS contributors</a>. Licensed under
+            <a href="https://github.com/hexagonkt/hexagon/blob/master/license.md">MIT License</a>
+          </div>
+
+          <div class="github-buttons">
+            <a
+              class="github-button"
+              href="https://github.com/hexagonkt/hexagon"
+              data-icon="octicon-star"
+              data-show-count="true"
+              aria-label="Star hexagonkt/hexagon on GitHub">Star</a>
+            <a
+              class="github-button"
+              href="https://github.com/hexagonkt/hexagon/subscription"
+              data-icon="octicon-eye"
+              data-show-count="true"
+              aria-label="Watch hexagonkt/hexagon on GitHub">Watch</a>
+            <a
+              class="github-button"
+              href="https://github.com/hexagonkt/hexagon/fork"
+              data-icon="octicon-git-branch"
+              data-show-count="true"
+              aria-label="Fork hexagonkt/hexagon on GitHub">Fork</a>
+            <a
+              class=
+                "twitter-share-button" href="https://twitter.com/share?text=Hexagon Kotlin library">
+
+              Tweet
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+    </div>
+  </div>
+
+
+  <!-- Javascript: Placed at the end of the document so the pages load faster -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/groovy.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/gradle.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/xml.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <!-- For share links -->
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+  <script async defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
+
+</html>

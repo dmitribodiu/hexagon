@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="application-name" content="hexagon" />
+  <meta name="author" content="Juanjo Aguililla" />
+  <meta name="description" content="The atoms of your platform" />
+  <meta name="keywords" content="Hexagon, microservices, Kotlin, RabbitMQ, MongoDB, JVM, Web" />
+  <meta name="generator" content="JBake" />
+
+  <meta name="theme-color" content="#135AA1" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="#135AA1" />
+  <meta name="msapplication-navbutton-color" content="#135AA1" />
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <meta name="msapplication-TileColor" content="#135AA1">
+  <meta name="msapplication-TileImage" content="/apple-touch-icon.png">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+
+  <title>Hexagon</title>
+
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css" />
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="shortcut icon" sizes="32x32" href="/favicon.ico" />
+  <link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@hexagon_kt">
+  <meta name="twitter:creator" content="@hexagon_kt">
+  <meta name="twitter:title" content="hexagon">
+  <meta name="twitter:description" content="Hexagon is a microservices library written in Kotlin. Its purpose is to ease the building
+        of services (Web applications, APIs or queue consumers) that run inside a cloud platform">
+  <meta name="twitter:image" content="http://hexagonkt.com/apple-touch-icon.png">
+
+  <meta property="og:title" content="hexagon" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://hexagonkt.com" />
+  <meta property="og:image" content="http://hexagonkt.com/apple-touch-icon.png" />
+  <meta property="og:description" content="Hexagon is a microservices library written in Kotlin. Its purpose is to ease the building
+        of services (Web applications, APIs or queue consumers) that run inside a cloud platform" />
+
+  <meta itemprop="name" content="hexagon">
+  <meta itemprop="description" content="Hexagon is a microservices library written in Kotlin. Its purpose is to ease the building
+        of services (Web applications, APIs or queue consumers) that run inside a cloud platform">
+  <meta itemprop="image" content="http://hexagonkt.com/apple-touch-icon.png">
+
+  <link rel="author" href="/humans.txt" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+  <link rel="canonical" href="http://hexagonkt.com" />
+
+  <!--[if lt IE 9]>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle"
+          data-toggle="collapse"
+          data-target=".navbar-collapse">
+
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+          <img src="/img/logo_white.svg"> <!-- TODO Add 'Hexagon' for documentation pages only -->
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/quick_start.html">Quick Start</a></li>
+          <li><a href="/guides.html">Guides</a></li>
+          <li><a href="/api.html">API</a></li>
+
+          <li>
+            <a href="https://github.com/hexagonkt/hexagon">
+              <i class="fa fa-github fa-2x" aria-hidden="true" style="font-size: 26px;"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/hexagon_kt">
+              <i class="fa fa-twitter fa-2x" aria-hidden="true" style="font-size: 26px;"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://kotlinlang.slack.com/messages/hexagon">
+              <i class="fa fa-slack fa-2x" aria-hidden="true" style="font-size: 26px;"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <aside class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+          <li class="title">Documentation</li>
+          <li><a href="/quick_start.html">Quick Start</a></li>
+          <li><a href="/motivation.html">Motivation</a></li>
+          <li><a href="/alternatives.html">Alternatives</a></li>
+          <li><a href="/ports_and_adapters.html">Ports and Adapters</a></li>
+          <li><a href="/services.html">Create Services</a></li>
+          <li><a href="/building.html">Gradle Helpers</a></li>
+          <li><a href="/api.html">API Reference</a></li>
+          <li>
+            <a href="https://github.com/hexagonkt/hexagon/blob/master/contributing.md">
+              Contribute
+            </a>
+          </li>
+        </ul>
+
+        <ul class="nav nav-sidebar">
+          <li class="title">Core</li>
+          <li><a href="/core/serialization.html">Serialization</a></li>
+          <li><a href="/core/configuration.html">Configuration</a></li>
+        </ul>
+
+        <ul class="nav nav-sidebar">
+          <li class="title">Modules</li>
+          <li><a href="/modules/scheduling.html">Scheduling</a></li>
+          <li><a href="/modules/testing.html">Testing</a></li>
+          <li><a href="/modules/rest.html">REST Helpers</a></li>
+        </ul>
+
+        <ul class="nav nav-sidebar">
+          <li class="title">Ports</li>
+          <li><a href="/ports/server.html">HTTP</a></li>
+          <li><a href="/ports/client.html">Client</a></li>
+          <li><a href="/ports/storage.html">Storage</a></li>
+          <li><a href="/ports/events.html">Events</a></li>
+          <li><a href="/ports/templates.html">Templates</a></li>
+        </ul>
+      </aside>
+
+      <main class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <p><a href="../../../index.html">hexagon_core</a> / <a href="../../index.html">com.hexagonkt.serialization</a> / <a href="../index.html">SerializationFormatTest</a> / <a href="index.html">BinaryTestFormat</a> / <a href="./extensions.html">extensions</a></p>
+<h1><a href="#extensions" name="extensions">extensions</a></h1>
+<p><code>val extensions:</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html"><code>Set</code></a><code>&lt;</code><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><code>String</code></a><code>&gt;</code></p>
+<p>Overrides <a href="../../-serialization-format/extensions.html">SerializationFormat.extensions</a></p>
+      </main>
+    </div>
+
+    <div class="row">
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-offset-1 col-xs-3 col-md-offset-0 col-md-2 quicklink-section">
+          <div class="footer-title">Documentation</div>
+          <ul class="quicklinks">
+                        <li><a href="/quick_start.html">Quick Start</a></li>
+            <li><a href="/guides.html">Guides</a></li>
+            <li><a href="/api.html">API</a></li>
+          </ul>
+        </div>
+
+        <div class="col-xs-3 col-md-2 quicklink-section">
+          <div class="footer-title">Contribute</div>
+          <ul class="quicklinks">
+            <li>
+              <a href="https://github.com/hexagonkt/hexagon/blob/master/contributing.md">
+                Contributing
+              </a>
+            </li>
+            <li><a href="https://github.com/hexagonkt/hexagon/projects/1">Planning</a></li>
+            <li><a href="https://github.com/hexagonkt/hexagon/milestones">Roadmap</a></li>
+          </ul>
+        </div>
+
+        <div class="col-xs-3 col-md-2 quicklink-section">
+          <div class="footer-title">Community</div>
+          <ul class="quicklinks">
+            <li><a href="https://github.com/hexagonkt/hexagon">Github</a></li>
+            <li><a href="https://twitter.com/hexagon_kt">Twitter</a></li>
+            <li><a href="https://kotlinlang.slack.com/messages/hexagon">Slack</a></li>
+          </ul>
+        </div>
+
+        <div class="col-xs-offset-1 col-xs-10 col-md-offset-0 col-md-6 quicklink-section">
+          <div class="credits">
+            Made with <i class="fa fa-heart heart"></i> by
+            <a href="https://github.com/hexagonkt/hexagon/graphs/contributors">
+            OSS contributors</a>. Licensed under
+            <a href="https://github.com/hexagonkt/hexagon/blob/master/license.md">MIT License</a>
+          </div>
+
+          <div class="github-buttons">
+            <a
+              class="github-button"
+              href="https://github.com/hexagonkt/hexagon"
+              data-icon="octicon-star"
+              data-show-count="true"
+              aria-label="Star hexagonkt/hexagon on GitHub">Star</a>
+            <a
+              class="github-button"
+              href="https://github.com/hexagonkt/hexagon/subscription"
+              data-icon="octicon-eye"
+              data-show-count="true"
+              aria-label="Watch hexagonkt/hexagon on GitHub">Watch</a>
+            <a
+              class="github-button"
+              href="https://github.com/hexagonkt/hexagon/fork"
+              data-icon="octicon-git-branch"
+              data-show-count="true"
+              aria-label="Fork hexagonkt/hexagon on GitHub">Fork</a>
+            <a
+              class=
+                "twitter-share-button" href="https://twitter.com/share?text=Hexagon Kotlin library">
+
+              Tweet
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+    </div>
+  </div>
+
+
+  <!-- Javascript: Placed at the end of the document so the pages load faster -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/groovy.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/gradle.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/xml.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <!-- For share links -->
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+  <script async defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
+
+</html>
